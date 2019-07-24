@@ -8,12 +8,6 @@ import br.com.santander.predictbacen.reclameaqui.viewmodel.QuantityByStateViewMo
 import br.com.santander.predictbacen.reclameaqui.viewmodel.QuantityDateDiff;
 import org.joda.time.DateTime;
 import org.json.simple.JSONObject;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -21,20 +15,11 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
-//@Entity
-//@Table(name = "complain")
-//@EntityListeners(AuditingEntityListener.class)
-//@JsonIgnoreProperties(value = {"createdAt", "updatedAt"},
-//		allowGetters = true)
-public class Complain 
+public class Complain
 {
 	private static final String SEPARATOR = "Æ";
 
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public String id;
-
-//	@NotBlank
 	public String title;
 	public String description;
 	public String complainOrigin;
