@@ -17,9 +17,9 @@ public class MariaDbConnection {
     }
 
     private MariaDbConnection() {
-        userName="root";
-        password="my-root";
-        url="jdbc:mariadb://localhost:3306/predictreclameaqui";
+        userName = System.getenv("JDBC_DATABASE_USERNAME") != null ? System.getenv("JDBC_DATABASE_USERNAME") : "root";
+        password = System.getenv("JDBC_DATABASE_PASSWORD") != null ? System.getenv("JDBC_DATABASE_PASSWORD") :"my-root";
+        url = System.getenv("JDBC_DATABASE_URL") != null ? System.getenv("JDBC_DATABASE_URL") :"jdbc:mariadb://localhost:3306/predictreclameaqui";
         driver="org.mariadb.jdbc.Driver";
         try {
             Class.forName(driver);
